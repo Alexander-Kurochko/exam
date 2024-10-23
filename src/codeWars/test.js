@@ -1,9 +1,14 @@
-function shortcut(str) {
-    return str.replace(/[aeiou]/g, '');
-}
+function peopleWithAgeDrink(old) {
 
-// Примеры использования:
-console.log(shortcut("hello"));     // "hll"
-console.log(shortcut("codewars"));  // "cdwrs"
-console.log(shortcut("goodbye"));   // "gdby"
-console.log(shortcut("HELLO"));     // "HELLO"
+    return old < 14 ? 'drink toddy' : old < 18 ? 'drink coke' : old < 21 ? 'drink beer' : 'drink whisky'
+
+/*    if (old < 14) {
+        return 'drink toddy'
+    } else if (old < 18) {
+        return 'drink coke'
+    } else if (old < 21) {
+        return 'drink beer'
+    } else {
+        return 'drink whisky'
+    }*/
+}
