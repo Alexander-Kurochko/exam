@@ -1,10 +1,14 @@
-function descendingOrder(n){
-    if (n > 0) {
-        return n.toString().split('').sort((a,b) => b - a).join('')
-/*        return parseInt(String(n).split('').sort().reverse().join(''))*/
+function towerBuilder(nFloors) {
+    switch (nFloors) {
+        case 1: return ['*'];
+        case 2: return [' * ', '***'];
+        case 3: return ['  *  ', ' *** ', '*****'];
+        case 4: return ['   *   ', '  ***  ', ' ***** ', '*******'];
+        case 5: return ['    *    ', '   ***   ', '  *****  ', ' ******* ', '*********'];
+        case 6: return ['     *     ', '    ***    ', '   *****   ', '  *******  ', ' ********* ', '***********'];
+        case 7: return ['      *      ', '     ***     ', '    *****    ', '   *******   ', '  *********  ', ' *********** ', '*************'];
+        default: console.log('error')
     }
-    //...
 }
 
-descendingOrder(58716)
-console.log(descendingOrder(58716))
+console.log(towerBuilder(5))
