@@ -1,14 +1,18 @@
-function towerBuilder(nFloors) {
-    switch (nFloors) {
-        case 1: return ['*'];
-        case 2: return [' * ', '***'];
-        case 3: return ['  *  ', ' *** ', '*****'];
-        case 4: return ['   *   ', '  ***  ', ' ***** ', '*******'];
-        case 5: return ['    *    ', '   ***   ', '  *****  ', ' ******* ', '*********'];
-        case 6: return ['     *     ', '    ***    ', '   *****   ', '  *******  ', ' ********* ', '***********'];
-        case 7: return ['      *      ', '     ***     ', '    *****    ', '   *******   ', '  *********  ', ' *********** ', '*************'];
-        default: console.log('error')
+function buildTower(floors) {
+    let tower = [];
+    let maxWidth = 2 * floors - 1;
+
+    for (let i = 0; i < floors; i++) {
+        let width = 2 * i + 1;
+        let spaces = (maxWidth - width) / 2;
+        let floor = ' '.repeat(spaces) + '*'.repeat(width) + ' '.repeat(spaces);
+        tower.push(floor);
     }
+
+    return tower;
 }
 
-console.log(towerBuilder(5))
+// Пример использования:
+let floors = 3;
+let tower = buildTower(floors);
+tower.forEach(floor => console.log(floor));
